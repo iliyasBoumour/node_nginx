@@ -17,11 +17,33 @@
   </head>
   <body>
     <h1>My website</h1>
-    <div id="root">
-      <ul class="collection page-column" id="list"></ul>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <div class="row page-column">
+      <form id="form" class="col s12">
+        <div class="row">
+          <div class="input-field col s8 offset-s2">
+            <i class="material-icons prefix">add_task</i>
+            <input id="text" type="tel" class="validate" />
+            <label for="text">Task</label>
+          </div>
+        </div>
 
+        <div class="col s12 btn-box">
+          <button
+            class="btn teal lighten-1 waves-effect waves-light"
+            type="submit"
+          >
+            Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </form>
+    </div>
+    <ul class="collection page-column" id="list"></ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script
+      src="https://cdn.socket.io/4.1.2/socket.io.min.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

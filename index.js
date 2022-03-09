@@ -1,10 +1,14 @@
-import express from "express";
-import path from "path";
+const express = require("express");
 const app = express();
+const http = require("http");
+const { Server } = require("socket.io");
+const server = http.createServer(app);
 
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "ui")));
+app.use(express.static("ui"));
 
-app.listen(3000, () => {
+server.listen(4000, () => {
   console.log("app listening");
 });
+
+module.exports = new Server(server);
+require("./socket");
